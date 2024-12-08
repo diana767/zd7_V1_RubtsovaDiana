@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Rubtsova_7zad_7var.Page3">
+    <ContentPage.Resources>
+        <StyleSheet Source="Style.css" />
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Расчет стоимости" FontSize="24" FontAttributes="Bold" />
+            <Entry x:Name="DaysEntry" Placeholder="Количество дней" Keyboard="Numeric" />
+            <Entry x:Name="MetersEntry" Placeholder="Количество метров" Keyboard="Numeric" />
+            <Picker x:Name="PaymentTypePicker" Title="Выберите вид оплаты">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Наличный расчет</x:String>
+                        <x:String>Безналичный расчет</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Button Text="Рассчитать" Clicked="OnCalculateCostClicked" />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="На корневую страницу" Clicked="OnBackToRootClicked" />
+                <Button Text="На главную страницу" Clicked="OnBackToMainPageClicked" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

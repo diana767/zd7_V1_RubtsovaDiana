@@ -1,0 +1,74 @@
+﻿Button {
+    BackgroundColor: LightGray;
+    TextColor: Black;
+    FontSize: 18;
+    Margin: 10;
+    Padding: 10;
+}
+
+^contentpage {
+    background-color: #808080;
+}
+
+mainstack {
+    margin: 15;
+    padding: 15;
+}
+
+label {
+    color: white;
+}
+
+#header {
+    font-size: 32;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-bottom: 50;
+}
+
+probel {
+    margin: 30;
+}
+
+entry {
+    background-color: white;
+    border: thin solid black;
+}
+
+button {
+    margin-top: 20;
+    background: blue;
+    color: white;
+    font-size: 20;
+    text-align: center;
+    text-decoration-color: white;
+    text-transform: none;
+}
+
+ll {
+    margin-top: 15;
+}
+
+checkbox {
+    color: white;
+}
+
+remember {
+    text-decoration-color: white;
+}
+
+stacklayout label {
+    font-family: Verdana;
+}
+
+forgot {
+    text-decoration-color: white;
+    align-content: end;
+}
+
+body123 {
+    vertical-align: central;
+}
+
+

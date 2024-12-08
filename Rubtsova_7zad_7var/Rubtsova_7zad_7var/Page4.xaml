@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Rubtsova_7zad_7var.Page4">
+    <!-- Первая страница карусели -->
+    <ContentPage>
+        <ContentPage.Resources>
+            <StyleSheet Source="Style.css" />
+        </ContentPage.Resources>
+        <StackLayout Padding="35">
+            <Label 
+                Text="Магазин пиломатериалов"
+                FontSize="25"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                VerticalOptions="End" />
+
+            <Entry 
+                x:Name="usernameEntry"
+                Placeholder="Username"
+                Keyboard="Text" />
+
+            <Entry 
+                x:Name="passwordEntry"
+                Placeholder="Password"
+                IsPassword="True" />
+        </StackLayout>
+    </ContentPage>
+
+    <!-- Вторая страница карусели -->
+    <ContentPage>
+        <ContentPage.Resources>
+            <StyleSheet Source="Style.css" />
+        </ContentPage.Resources>
+        <StackLayout>
+            <Frame BackgroundColor="Yellow" Padding="10">
+                <Label Text="Онлайн-магазин лесничества (покупка пиломатериалов)"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       TextColor="Green" />
+            </Frame>
+
+            <!-- CarouselView для выбора материалов -->
+            <CarouselView x:Name="MaterialsCarouselView">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Image Source="{Binding Image}" Aspect="AspectFill" HeightRequest="200" />
+                            <Label Text="Название материала:"  />
+                            <Label Text="{Binding MaterialName}" FontSize="24" />
+                            <Label Text="Вид дерева:"  />
+                            <Label Text="{Binding WoodType}" />
+                            <Label Text="Категория:"  />
+                            <Label Text="{Binding Category}" />
+                            <Label Text="Стоимость:" />
+                            <Label Text="{Binding Price}" />
+                            <Label Text="Производитель:"/>
+                            <Label Text="{Binding Manufacturer}" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <!-- Кнопки -->
+            <Button Text="Просмотр информации"
+                    Clicked="OnViewInfoClicked" />
+            <Button Text="Расчет стоимости"
+                    Clicked="OnCalculateCostClicked" />
+        </StackLayout>
+    </ContentPage>
+</CarouselPage>

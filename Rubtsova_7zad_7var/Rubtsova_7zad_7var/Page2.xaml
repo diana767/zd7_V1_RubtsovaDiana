@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Rubtsova_7zad_7var.Page2">
+    <ContentPage.Resources>
+        <StyleSheet Source="Style.css" />
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="Yellow" Padding="10">
+                <Label Text="Онлайн-магазин лесничества (покупка пиломатериалов)"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       TextColor="Green" />
+            </Frame>
+
+            <CollectionView x:Name="MaterialsCollectionView" IsGrouped="True">
+                <CollectionView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding Key}" FontSize="20" FontAttributes="Bold" />
+                    </DataTemplate>
+                </CollectionView.GroupHeaderTemplate>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="Информация о пиломатериале" FontSize="24" FontAttributes="Bold" />
+                            <Image Source="{Binding Image}" HeightRequest="200" />
+                            <Label Text="{Binding MaterialName}" FontSize="20" FontAttributes="Bold" />
+                            <Label Text="{Binding WoodType}" />
+                            <Label Text="{Binding Category}" />
+                            <Label Text="{Binding Price}" />
+                            <Label Text="{Binding Manufacturer}" />
+                            <Label Text="{Binding Meters}" />
+                            <Label Text="{Binding Days}" />
+                            <Label Text="{Binding Description}" />
+                            <Label Text="{Binding PaymentType}" />
+                            <Label Text="{Binding RequiresProcessing}" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Label Text="Данные по наличию пиломатериалов на текущую дату:"
+                   TextColor="Red" />
+            <Label Text="{Binding CurrentDate}" TextColor="Red" />
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="Просмотр информации по материалу"
+                        Clicked="OnViewMaterialInfoClicked" />
+                <Button Text="Расчет стоимости покупки пиломатериала"
+                        Clicked="OnCalculateMaterialCostClicked" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

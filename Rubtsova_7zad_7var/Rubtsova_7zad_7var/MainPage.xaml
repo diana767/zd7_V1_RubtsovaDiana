@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Rubtsova_7zad_7var.MainPage">
+    <ContentPage.Resources>
+        <StyleSheet Source="Style.css" />
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Padding="35">
+            <Label Text="Информация по видам материалов (покупка пиломатериалов)"
+                   FontSize="25"
+                   FontAttributes="Italic"
+                   TextColor="Green"
+                   HorizontalOptions="Center" />
+            <CollectionView x:Name="MaterialsCollectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Image Source="{Binding Image}" HeightRequest="200" />
+                            <Label Text="Название материала:"  />
+                            <Label Text="{Binding MaterialName}" FontSize="20" />
+                            <Label Text="Вид дерева:" />
+                            <Label Text="{Binding WoodType}" />
+                            <Label Text="Категория:" />
+                            <Label Text="{Binding Category}" />
+                            <Label Text="Стоимость:"  />
+                            <Label Text="{Binding Price}" TextColor="Green" />
+                            <Label Text="Производитель:" />
+                            <Label Text="{Binding Manufacturer}" />
+                            <Label Text="Количество метров:"  />
+                            <Label Text="{Binding Meters}" />
+                            <Label Text="Количество дней на изготовление:" />
+                            <Label Text="{Binding DaysToProduce}" />
+                            <Label Text="Описание:"  />
+                            <Label Text="{Binding Description}" />
+                            <Label Text="Вид оплаты:" />
+                            <Label Text="{Binding PaymentType}" />
+                            <Label Text="Необходимость обработки:" />
+                            <Label Text="{Binding RequiresProcessing}" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="Расчет стоимости" Clicked="OnCalculateCostClicked" />
+                <Button Text="Возврат на главную страницу" Clicked="OnBackToMainPageClicked" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
